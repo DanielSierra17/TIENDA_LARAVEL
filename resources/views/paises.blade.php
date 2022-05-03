@@ -13,10 +13,10 @@
   <thead>
   <tr>
         <th class="bg-info">PAISES</th>
-        <th class="bg-info">CAPITAL</th>
-        <th class="bg-info">MONEDA</th>
-        <th class="bg-info">POBLACIÓN</th>
-        <th class="bg-info">CIUDADES</th>
+        <th class="bg-danger">CAPITAL</th>
+        <th class="bg-warning">MONEDA</th>
+        <th class="bg-success">POBLACIÓN</th>
+        <th class="bg-primary">CIUDADES</th>
     </tr>
   </thead>
   <tbody>
