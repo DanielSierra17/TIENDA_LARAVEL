@@ -12,11 +12,11 @@
     <table class="table table-dark">
   <thead>
   <tr>
-        <th class="bg-primary">PAISES</th>
-        <th class="bg-primary">CAPITAL</th>
-        <th class="bg-primary">MONEDA</th>
-        <th class="bg-primary">POBLACIÓN</th>
-        <th class="bg-primary">CIUDADES</th>
+        <th class="bg-info">PAISES</th>
+        <th class="bg-info">CAPITAL</th>
+        <th class="bg-info">MONEDA</th>
+        <th class="bg-info">POBLACIÓN</th>
+        <th class="bg-info">CIUDADES</th>
     </tr>
   </thead>
   <tbody>
