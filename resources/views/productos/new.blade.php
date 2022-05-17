@@ -3,11 +3,12 @@
 @section('contenido')
 
 <div class="row">
-    <h1 class="cyan-text text-darken-3">NUEVO PRODUCTO</h1>
+    <h1 class="teal-text text-darken-3">NUEVO PRODUCTO</h1>
 </div>
 
 <div class="row">
-<form class='col s8' method="" action="">
+<form class='col s8' method="POST" action="{{ route('productos.store') }}">
+    @csrf
 <div class="row">
 <div class="input-field col s8">
 <input placeholder="Nombre de Producto" id="nombre" type="text" name="nombre" class="validate">
@@ -31,10 +32,32 @@
 </div>
 
 <div class="row">
+<div class="input-field col s8">
+    <select name="marca" id="marca">
+        @foreach($marcas as $marca)
+        <option value="{{ $marca->id }}">{{ $marca->nombre }}</option>
+        @endforeach
+    </select>
+    <label>Seleccione la Marca</label>
+  </div>
+</div>
+
+<div class="row">
+<div class="input-field col s8">
+    <select name="categoria" id="categoria">
+        @foreach($categorias as $categoria)
+        <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+        @endforeach
+    </select>
+    <label>Seleccione la Categoria</label>
+  </div>
+</div>
+
+<div class="row">
 <div class="file-field input-field col s8">
-<div class="btn cyan darken-1">
+<div class="btn teal darken-3">
 <span>Imagen</span>
-<input type="file">
+<input type="file" name="imagen" id="imagen">
 </div>
 <div class="file-path-wrapper">
 <input class="file-path validate" type="text" placeholder="Imagen de Producto">
@@ -43,7 +66,7 @@
 </div>
 
 <div class="row">
-<button class="btn waves-effect waves-light cyan darken-1" type="submit" name="action">GUARDAR
+<button class="btn waves-effect waves-light teal darken-3" type="submit" name="action">GUARDAR
 </button>
 </div>
 
