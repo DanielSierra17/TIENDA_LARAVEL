@@ -46,17 +46,20 @@ class ProductoController extends Controller
     {
         // Reglas de validacion
         $reglas = [
-            "nombre" => 'required|alpha',
+            "nombre" => 'required|alpha|unique:productos,nombre',
             "desc" => 'required|min:10|max:50',
             "precio" => 'required|numeric',
             "marca" => 'required',
-            "categoria" => 'required'
+            "categoria" => 'required',
+            "imagen" => 'required|image'
         ];
 
         $mensajes = [
             "required" => "Campos Obligatorios",
             "numeric" => "Solo Numeros",
-            "alpha" => "Solo Letras"
+            "alpha" => "Solo Letras",
+            "image" => "Ingrese Imagen",
+            "unique" => "Nombre Producto Repetido"
         ];
 
         // Crear el objeto validador
@@ -73,6 +76,12 @@ class ProductoController extends Controller
         }
         else {
 
+        // Analizar el objeto file del request    
+        $nombre_archivo = $r->imagen->getClientOriginalName();
+        $archivo = $r->imagen;
+        // Mover el archivo en la carpeta public
+        $ruta = public_path().'/img';
+        $archivo->move($ruta, $nombre_archivo);
         // Creamos entidad de producto
         $p = new Producto;
 
@@ -81,16 +90,17 @@ class ProductoController extends Controller
 
         $p->nombre = $r->nombre;
         $p->desc = $r->desc;
-        $p->precio =$r->precio; 
+        $p->precio = $r->precio; 
         $p->marca_id = $r->marca;
         $p->categoria_id = $r->categoria;
+        $p->imagen = $nombre_archivo;
         // Grabar en base de datos
         $p->save();
 
         /*echo "Producto guardado exitosamente";*/
         // Redireccionar
         return redirect('productos/create')
-                ->with('mensaje', 'Producto registrado');
+                ->with('mensaje', 'Producto Registrado Exitosamente');
     }
     }
 

@@ -13,13 +13,13 @@
 </div>
 
 <div class="row">
-<form class='col s8' method="POST" action="{{ route('productos.store') }}">
+<form class='col s8' method="POST" action="{{ route('productos.store') }}" enctype="multipart/form-data">
     @csrf
 <div class="row">
 <div class="input-field col s8">
 <input placeholder="Nombre de Producto" id="nombre" type="text" name="nombre" class="validate" value="{{ old('nombre') }}">
 <label for="nombre">Nombre de Producto</label>
-<span class="red-text text-red accent-3">{{ $errors->first('nombre') }}</span>
+<span class="red-text text-red accent-4">{{ $errors->first('nombre') }}</span>
 </div>
 </div>
 
@@ -29,7 +29,7 @@
 {{ old('desc') }}
 </textarea>
 <label for="desc">Descripción</label>
-<span class="red-text text-red accent-3">{{ $errors->first('desc') }}</span>
+<span class="red-text text-red accent-4">{{ $errors->first('desc') }}</span>
 </div>
 </div>
 
@@ -37,7 +37,7 @@
 <div class="input-field col s8">
 <input placeholder="Precio de Producto" id="precio" type="text" name="precio" class="validate" value="{{ old('precio') }}">
 <label for="precio">Precio de Producto</label>
-<span class="red-text text-red accent-3">{{ $errors->first('precio') }}</span>
+<span class="red-text text-red accent-4">{{ $errors->first('precio') }}</span>
 </div>
 </div>
 
@@ -50,7 +50,7 @@
         @endforeach
     </select>
     <label>Seleccione la Marca</label>
-    <span class="red-text text-red accent-3">{{ $errors->first('marca') }}</span>
+    <span class="red-text text-red accent-4">{{ $errors->first('marca') }}</span>
   </div>
 </div>
 
@@ -63,7 +63,7 @@
         @endforeach
     </select>
     <label>Seleccione la Categoria</label>
-    <span class="red-text text-red accent-3">{{ $errors->first('categoria') }}</span>
+    <span class="red-text text-red accent-4">{{ $errors->first('categoria') }}</span>
   </div>
 </div>
 
@@ -75,6 +75,7 @@
 </div>
 <div class="file-path-wrapper">
 <input class="file-path validate" type="text" placeholder="Imagen de Producto">
+<span class="red-text text-red accent-4">{{ $errors->first('imagen') }}</span>
 </div>
 </div>
 </div>
