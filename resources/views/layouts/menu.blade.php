@@ -9,11 +9,12 @@
 </head>
 <body>
 
-    <nav class="teal darken-3">
+    <nav class="cyan darken-3">
         <div class="nav-wrapper">
         <a href="#" class="brand-logo">TIENDA PHP</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="badges.html">Productos</a></li>
+            <li><a href="collapsible.html">Catalogos</a></li>
             <li><a href="collapsible.html">Pedidos</a></li>
         </ul>
         </div>

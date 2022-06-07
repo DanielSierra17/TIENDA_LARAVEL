@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\CarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,3 +75,7 @@ Route::get('prueba', function() {
 
 Route::resource('productos' ,
                 ProductoController::class);
+Route::resource('car' ,
+                CarController::class,
+            [ 'only' => ['store', 'destroy', 'categoria']
+        ]);                
