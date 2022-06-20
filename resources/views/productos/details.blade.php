@@ -7,6 +7,8 @@
 </div>
 <div class="row">
     <div class="col s8">
+        <h5 class="cyan-text text-darken-3">IMAGEN: </h5>
+        <img src="{{ asset('img/'.$producto->imagen) }}" alt="" width="400px">
         <h5 class="cyan-text text-darken-3">MARCA: </h5>
             {{ $producto->marca->nombre }}
         <h5 class="cyan-text text-darken-3">DESCRIPCION: </h5>

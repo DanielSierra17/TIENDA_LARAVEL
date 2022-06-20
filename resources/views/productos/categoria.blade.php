@@ -10,7 +10,7 @@
 <div class="row" style="display: inline-block">
     <div class="col">  
         <div class="card">
-            <div class="card-image" style="height:350px; width:400px">
+            <div class="card-image" style="height:150px; width:200px">
                 @if( $producto->imagen === null )
                     <img src="{{ asset( 'img/producto_no_disponible.png' ) }}" alt="" />
     
