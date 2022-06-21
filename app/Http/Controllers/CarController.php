@@ -13,7 +13,8 @@ class CarController extends Controller
      */
     public function index()
     {
-        //
+        // Mostrar variable de session 'cart'
+        return view('cart.index');
     }
 
     /**
@@ -34,9 +35,42 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        echo "<pre>";
-        var_dump($request->all());
-        echo "</pre>";
+        // Estructurar la informacion del producto en un array
+
+        $producto = [
+            [
+                "nombre" => $request->prod_nom,
+                "id" => $request->prod_id,
+                "cantidad" => $request->cantidad,
+                "precio" => $request->prod_pre
+            ]
+        ];
+
+        if (!session('cart')) {
+
+            // Crear el estado de session 'cart'
+            $auxiliar[] = $producto;
+            session([ 'cart' => $auxiliar ]);
+        } else {
+
+            // Existe la variable de session
+            // Extraer el contenido de la variable de session
+
+            $auxiliar = session('cart');
+
+            // Agregar el nuevo item al arreglo
+
+            $auxiliar[] = $producto;
+
+            // Volver a crear la session 'cart'
+
+            session(['cart' => $auxiliar]);
+        }
+
+        // Redireccionar al catalogo de productos
+
+        return redirect('productos')
+               ->with('mensaje' , 'PRODUCTO AÑADIDO AL CARRITO');
     }
 
     /**
@@ -81,6 +115,11 @@ class CarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Eliminar la session 'cart'
+
+        session()->forget('cart');
+        return redirect('car')
+               ->with("mensaje","CARRITO ELIMINADO");
+
     }
 }

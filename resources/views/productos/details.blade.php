@@ -3,12 +3,12 @@
 @section('contenido')
 
 <div class="row">
-    <h1 class="cyan-text text-darken-3">{{ $producto->nombre }}</h1>
+    <h5 class="cyan-text text-darken-3">{{ $producto->nombre }}</h5>
 </div>
 <div class="row">
     <div class="col s8">
         <h5 class="cyan-text text-darken-3">IMAGEN: </h5>
-        <img src="{{ asset('img/'.$producto->imagen) }}" alt="" width="400px">
+        <img src="{{ asset('img/'.$producto->imagen) }}" alt="" width="350px">
         <h5 class="cyan-text text-darken-3">MARCA: </h5>
         {{ $producto->marca->nombre }}
         <h5 class="cyan-text text-darken-3">DESCRIPCION: </h5>
@@ -26,6 +26,8 @@
         <form action="{{ route('car.store') }}" method="post">
             @csrf
             <input type="hidden" name="prod_id" value="{{ $producto->id }}">
+            <input type="hidden" name="prod_nom" value="{{ $producto->nombre }}">
+            <input type="hidden" name="prod_pre" value="{{ $producto->precio }}">
             <div class="row">
                 <div class="col s4 input-field">
                     <select name="cantidad" id="cantidad">

@@ -77,5 +77,5 @@ Route::resource('productos' ,
                 ProductoController::class);
 Route::resource('car' ,
                 CarController::class,
-            [ 'only' => ['store', 'destroy', 'categoria']
+            [ 'only' => ['store', 'destroy', 'index']
         ]);                

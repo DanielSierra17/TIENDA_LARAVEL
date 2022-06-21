@@ -13,11 +13,11 @@
 
     <nav class="cyan darken-3">
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">TIENDA PHP</a>
+            <a href="{{ route('productos.create') }}" class="brand-logo">TIENDA PHP</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="badges.html">Productos</a></li>
-                <li><a href="collapsible.html">Catalogos</a></li>
-                <li><a href="collapsible.html">Pedidos</a></li>
+                <li><a href="{{ route('productos.create') }}">Productos</a></li>
+                <li><a href="{{ route('productos.index') }}">Catalogo</a></li>
+                <li><a href="{{ route('car.index') }}">Carrito</a></li>
             </ul>
         </div>
     </nav>

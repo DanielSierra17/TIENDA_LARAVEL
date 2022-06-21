@@ -104,7 +104,7 @@ class ProductoController extends Controller
         /*echo "Producto guardado exitosamente";*/
         // Redireccionar
         return redirect('productos/create')
-                ->with('mensaje', 'Producto Registrado Exitosamente');
+                ->with('mensaje', 'PRODUCTO REGISTRADO EXITOSAMENTE');
     }
     }
 
