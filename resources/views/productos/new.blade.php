@@ -25,9 +25,7 @@
 
         <div class="row">
             <div class="input-field col s8">
-                <textarea name="desc" id="desc" class="materialize-textarea">
-                {{ old('desc') }}
-                </textarea>
+                <textarea class="materialize-textarea" id="desc" name="desc">{{ old('desc') }}</textarea>
                 <label for="desc">Descripción</label>
                 <span class="red-text text-red accent-4">{{ $errors->first('desc') }}</span>
             </div>

@@ -10,7 +10,7 @@
 
 <div class="row">
     <div class="col s8">
-        <table class="highlight centered">
+        <table class="highlight centered striped">
             <thead class="cyan darken-3 white-text text-white">
                 <th>Producto</th>
                 <th>Cantidad</th>
